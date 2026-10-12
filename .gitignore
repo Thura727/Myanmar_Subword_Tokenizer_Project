@@ -1,0 +1,19 @@
+.venv/
+**/__pycache__/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+# Keep trained models & results tracked for reproducibility of the report.
+# Ignore only local editor / OS noise.
+
+data/external/wiki_my.txt
+data/raw/*.txt
+data/processed/*.txt
+models/*.model
+models/*.vocab

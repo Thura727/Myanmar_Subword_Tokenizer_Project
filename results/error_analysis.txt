@@ -1,0 +1,97 @@
+Error Analysis: BPE vs Unigram on Myanmar Compound Words
+Vocabulary size compared: 8000
+
+Criterion: over-segmentation (more pieces) is treated as worse for
+morphology preservation on closed compounds.
+
+Word: ကျန်းမာရေးဝန်ကြီးဌာန
+  BPE     (2): ▁ကျန်းမာရေး | ဝန်ကြီးဌာန
+  Unigram (2): ▁ကျန်းမာရေး | ဝန်ကြီးဌာန
+  Verdict: similar
+
+Word: ဖွံ့ဖြိုးတိုးတက်မှု
+  BPE     (3): ▁ဖွံ့ဖြိုး | တိုးတက် | မှု
+  Unigram (3): ▁ | ဖွံ့ဖြိုးတိုးတက် | မှု
+  Verdict: similar
+
+Word: ပညာရေးစနစ်
+  BPE     (1): ▁ပညာရေးစနစ်
+  Unigram (1): ▁ပညာရေးစနစ်
+  Verdict: similar
+
+Word: ကျန်းမာရေး
+  BPE     (1): ▁ကျန်းမာရေး
+  Unigram (1): ▁ကျန်းမာရေး
+  Verdict: similar
+
+Word: ပညာရေး
+  BPE     (1): ▁ပညာရေး
+  Unigram (1): ▁ပညာရေး
+  Verdict: similar
+
+Word: စီးပွားရေး
+  BPE     (1): ▁စီးပွားရေး
+  Unigram (1): ▁စီးပွားရေး
+  Verdict: similar
+
+Word: နိုင်ငံတော်
+  BPE     (1): ▁နိုင်ငံတော်
+  Unigram (1): ▁နိုင်ငံတော်
+  Verdict: similar
+
+Word: ပြည်သူ့ကျန်းမာရေး
+  BPE     (2): ▁ပြည်သူ့ | ကျန်းမာရေး
+  Unigram (2): ▁ပြည်သူ့ | ကျန်းမာရေး
+  Verdict: similar
+
+Word: သတင်းအချက်အလက်နည်းပညာ
+  BPE     (2): ▁သတင်းအချက်အလက် | နည်းပညာ
+  Unigram (2): ▁သတင်းအချက်အလက် | နည်းပညာ
+  Verdict: similar
+
+Word: လူမှုကာကွယ်ရေး
+  BPE     (2): ▁လူမှုကာကွယ် | ရေး
+  Unigram (1): ▁လူမှုကာကွယ်ရေး
+  Verdict: BPE over-segments (worse)
+
+Word: သမဝါယမကောလိပ်
+  BPE     (6): ▁သမ | ဝါ | ယ | မက | ော | လိပ်
+  Unigram (2): ▁သမဝါယမ | ကောလိပ်
+  Verdict: BPE over-segments (worse)
+
+Word: အရှေ့တိုင်းဒဿနိကဗေဒ
+  BPE     (6): ▁အရှေ့ | တိုင်း | ဒ | ဿ | နိက | ဗေဒ
+  Unigram (2): ▁အရှေ့တိုင်း | ဒဿနိကဗေဒ
+  Verdict: BPE over-segments (worse)
+
+Word: စားနပ်ရိက္ခာဖူလုံမှု
+  BPE     (8): ▁စား | နပ် | ရိ | က္ခ | ာဖ | ူ | လုံ | မှု
+  Unigram (5): ▁ | စားနပ်ရိက္ခာ | ဖူ | လုံ | မှု
+  Verdict: BPE over-segments (worse)
+
+Word: ဂလိုဘယ်လိုက်ဇေးရှင်း
+  BPE     (7): ▁ဂ | လို | ဘယ် | လိုက် | ဇ | ေး | ရှင်း
+  Unigram (2): ▁ဂလိုဘယ် | လိုက်ဇေးရှင်း
+  Verdict: BPE over-segments (worse)
+
+Word: ယူဂိုစလားဗီးယားနိုင်ငံ
+  BPE     (6): ▁ယူ | ဂို | စ | လား | ဗီးယား | နိုင်ငံ
+  Unigram (2): ▁ယူဂိုစလားဗီးယား | နိုင်ငံ
+  Verdict: BPE over-segments (worse)
+
+Word: ဖေ့စ်ဘွတ်ခ်စာမျက်နှာ
+  BPE     (6): ▁ဖ | ေ့စ် | ဘ | ွတ် | ခ် | စာမျက်နှာ
+  Unigram (2): ▁ဖေ့စ်ဘွတ်ခ် | စာမျက်နှာ
+  Verdict: BPE over-segments (worse)
+
+BPE-worse cases     : 7
+Unigram-worse cases : 0
+
+Conclusion:
+Overall, Unigram preserves Myanmar compound morphology better on this sample (fewer over-segmentations).
+
+Discussion note: Unigram's probabilistic objective often keeps
+high-probability multi-character units intact, which aligns with
+Myanmar compounding (e.g. ကျန်းမာရေး + ဝန်ကြီးဌာန). BPE merges
+by frequency pair counts and can split rare compounds more
+aggressively at smaller vocabularies.
